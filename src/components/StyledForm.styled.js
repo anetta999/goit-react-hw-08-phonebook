@@ -1,14 +1,16 @@
 import styled from 'styled-components';
-import { Field, Form, ErrorMessage } from 'formik';
 
-export const StyledForm = styled(Form)`
+export const StyledForm = styled.form`
   width: 579px;
-  padding-top: 80px;
-  padding-bottom: 80px;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right: auto;
+  margin-left: auto;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 28px;
 
   border-radius: 18px;
@@ -16,7 +18,7 @@ export const StyledForm = styled(Form)`
   background-color: #f6f6f6;
 `;
 
-export const FormField = styled(Field)`
+export const FormInput = styled.input`
   width: 499px;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -38,11 +40,7 @@ export const FormField = styled(Field)`
   }
 `;
 
-export const StyledErrorMsg = styled(ErrorMessage)`
-  color: #4f2ee8;
-`;
-
-export const AddBtn = styled.button`
+export const FormBtn = styled.button`
   width: 499px;
   height: 64px;
   padding: 0;
