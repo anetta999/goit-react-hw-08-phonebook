@@ -12,6 +12,8 @@ import {
   StyledContactsSection,
 } from 'components/Section.styled';
 import { ContactsWrap } from './ContactsPage.styled';
+import { Loader } from 'components/Loader/Loader';
+import toast from 'react-hot-toast';
 
 export default function Contacts() {
   const dispatch = useDispatch();
@@ -26,8 +28,11 @@ export default function Contacts() {
     <>
       <StyledContactsSection>
         <Container>
-          {isLoading && !error && <p>LOADING...</p>}
-          {error && <p>Something went wrong, please try reloading the page</p>}
+          {isLoading && !error && <Loader />}
+          {error &&
+            toast.error('Something went wrong, please try reloading the page', {
+              duration: 5000,
+            })}
           <SectionSecondTitle>Contacts</SectionSecondTitle>
           <ContactsWrap>
             <ContactForm />

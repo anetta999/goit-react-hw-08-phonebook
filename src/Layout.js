@@ -2,15 +2,19 @@ import { Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
 import { AppBar } from 'components/AppBar/AppBar';
 import { GlobalStyle } from 'components/Globalstyle';
+import { Toaster } from 'react-hot-toast';
 
 export const Layout = () => {
   return (
-    <div>
+    <>
       <AppBar />
-      <Suspense fallback={null}>
-        <Outlet />
-      </Suspense>
+      <main>
+        <Suspense fallback={null}>
+          <Outlet />
+        </Suspense>
+      </main>
       <GlobalStyle />
-    </div>
+      <Toaster position="top-right" reverseOrder={false} />
+    </>
   );
 };
