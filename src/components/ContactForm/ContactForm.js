@@ -10,6 +10,7 @@ import * as Yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts } from 'redux/contacts/selectors';
 import { addContact } from 'redux/contacts/operations';
+import toast from 'react-hot-toast';
 
 const ContactFormSchema = Yup.object().shape({
   name: Yup.string()
@@ -39,7 +40,10 @@ export const ContactForm = () => {
         );
 
         if (isContactInList) {
-          alert(`${values.name} is already in contacts.`);
+          toast.error(`${values.name} is already in contacts.`, {
+            duration: 5000,
+          });
+
           return;
         }
 
